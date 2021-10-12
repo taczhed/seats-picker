@@ -2,12 +2,14 @@
 <html lang="pl-PL">
 <head>
     <meta charset="UTF-8">
-    <title>Seats picker - logowanie</title>
+    <title>Seats picker - rejestracja</title>
     <link href="../css/bulma.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/fontawesome/all.css">
     <script defer src="../js/fontawesome/brands.js"></script>
     <script defer src="../js/fontawesome/solid.js"></script>
     <script defer src="../js/fontawesome/fontawesome.js"></script>
+    <script defer src="../js/register.js"></script>
+
 </head>
 <body>
 
@@ -26,7 +28,7 @@
                                 </a>
                             </p>
                             <p class="control is-expanded">
-                                <input class="input" type="tel" placeholder="Numer telefonu">
+                                <input id='tel' class="input" type="tel" placeholder="Numer telefonu">
                             </p>
                         </div>
                     </div>
@@ -34,7 +36,7 @@
             </div>
             <div class="field">
                 <p class="control has-icons-left has-icons-right">
-                    <input class="input" type="text" placeholder="Login">
+                    <input id='login' class="input" type="text" placeholder="Login">
                     <span class="icon is-small is-left">
                         <i class="fas fa-user"></i>
                     </span>
@@ -42,7 +44,7 @@
             </div>
             <div class="field">
                 <p class="control has-icons-left has-icons-right">
-                    <input class="input" type="password" placeholder="Hasło">
+                    <input id='password' class="input" type="password" placeholder="Hasło">
                     <span class="icon is-small is-left">
                         <i class="fas fa-lock"></i>
                     </span>
@@ -50,7 +52,7 @@
             </div>
             <div class="field">
                 <p class="control has-icons-left has-icons-right">
-                    <input class="input" type="password" placeholder="Potwórz hasło">
+                    <input id='sec-password' class="input" type="password" placeholder="Potwórz hasło">
                     <span class="icon is-small is-left">
                         <i class="fas fa-lock"></i>
                     </span>
@@ -58,7 +60,7 @@
             </div>
             <div class="field">
                 <p class="control">
-                    <button class="button has-background-primary-dark has-text-white mt-2">Zarejestruj</button>
+                    <button id="register" class="button has-background-primary-dark has-text-white mt-2">Zarejestruj</button>
                 </p>
             </div>
         </div>

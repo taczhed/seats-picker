@@ -1,0 +1,33 @@
+div.seat {
+    width: 20px;
+    height: 23px;
+    margin: 0 1px;
+    background-color: #00b89c;
+    border-radius: 3px;
+    float: left;
+}
+
+div.seat:nth-of-type(10) {
+    margin-right: 5vw;
+}
+
+div.display {
+    width: 80%;
+    height: 12px;
+    background-color: #555;
+    margin: 16px auto 28px auto;
+}
+
+div.seats-row {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    margin: 4px auto;
+}
+
+div#app {
+    z-index: 2;
+    margin-top: -10px;
+}
