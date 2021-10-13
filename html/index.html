@@ -5,6 +5,9 @@
     <title>Seats picker - logowanie</title>
     <link href="../css/bulma.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/fontawesome/all.css">
+    <script defer src="../js/login.js" type="module"></script>
+    <script defer src="../js/redirect.js" type="module"></script>
+    <script defer src="../js/showNotification.js" type="module"></script>
     <script defer src="../js/fontawesome/brands.js"></script>
     <script defer src="../js/fontawesome/solid.js"></script>
     <script defer src="../js/fontawesome/fontawesome.js"></script>
@@ -17,7 +20,7 @@
             <p class="mb-4 is-size-5">Logowanie: </p>
             <div class="field">
                 <p class="control has-icons-left has-icons-right">
-                    <input class="input" type="text" placeholder="Login">
+                    <input id="login" class="input" type="text" placeholder="Login">
                     <span class="icon is-small is-left">
                         <i class="fas fa-user"></i>
                     </span>
@@ -25,7 +28,7 @@
             </div>
             <div class="field">
                 <p class="control has-icons-left has-icons-right">
-                    <input class="input" type="password" placeholder="Hasło">
+                    <input id="password" class="input" type="password" placeholder="Hasło">
                     <span class="icon is-small is-left">
                         <i class="fas fa-lock"></i>
                     </span>
@@ -36,9 +39,7 @@
             </p>
             <div class="field">
                 <p class="control">
-                    <a href="http://localhost:63342/seats-picker/html/app.html">
-                        <button class="button has-background-primary-dark has-text-white mt-2" id="login">Zaloguj</button>
-                    </a>
+                    <button class="button has-background-primary-dark has-text-white mt-2" id="login-button">Zaloguj</button>
                 </p>
             </div>
            </div>

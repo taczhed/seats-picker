@@ -1,3 +1,7 @@
+import { loginCheck } from "./loginCheck.js";
+const sessionStatus = await loginCheck()
+if (!sessionStatus.status) "/html/"
+
 const render = {
     display: () => {
         let display = document.createElement('div')

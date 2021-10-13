@@ -1,3 +1,5 @@
+import { showNotification } from './showNotification.js'
+
 const registerBtn = document.querySelector('#register')
 
 registerBtn.addEventListener('click',async () => {
@@ -12,14 +14,14 @@ registerBtn.addEventListener('click',async () => {
         data.append('login', login)
         data.append('password', password)
 
-        const URL = '../php/register.html';
+        const URL = '../php/register.php';
         let res = await fetch(URL, {
             method: "POST",
             body: data
         })
             .then(res => res.json())
             .then(data => {
-                const type = data.result === 'Rejestracja przebiegła pomyślnie!' ? 'success' : 'danger'
+                const type = data.result === 'Rejestracja przebiegła pomyślnie!' ? 'success' : 'error'
                 showNotification(type, data.result)
             })
 
@@ -27,20 +29,3 @@ registerBtn.addEventListener('click',async () => {
     else if (password !== secPassword) showNotification('danger', 'Hasło główne nie zgadza się z drugim hasłem!')
     else showNotification('danger', 'Jedno z pól formularza pozostało puste!')
 })
-
-const showNotification = (type, message) => {
-    const notification = document.createElement('div')
-    const button = document.createElement('button')
-    const column = document.querySelector('.column')
-    notification.innerText = message
-    notification.appendChild(button)
-    notification.classList.add('notification', 'has-text-white')
-    button.classList.add('delete')
-    button.addEventListener('click',() => notification.remove())
-    setTimeout(() => notification.remove(), 4000)
-
-    if (type === 'success') notification.classList.add('has-background-success-dark')
-    else if (type === 'danger') notification.classList.add('has-background-danger-dark')
-
-    column.appendChild(notification)
-}
