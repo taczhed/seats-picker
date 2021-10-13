@@ -1,4 +1,4 @@
-export const showNotification = (type, message) => {
+export const notification = (type, message) => {
     const notification = document.createElement('div')
     const button = document.createElement('button')
     const column = document.querySelector('.column')
@@ -10,7 +10,7 @@ export const showNotification = (type, message) => {
     setTimeout(() => notification.remove(), 4000)
 
     if (type === 'success') notification.classList.add('has-background-success-dark')
-    else if (type === 'error') notification.classList.add('has-background-danger-dark')
+    else notification.classList.add('has-background-danger-dark')
 
     column.appendChild(notification)
 }

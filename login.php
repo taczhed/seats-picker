@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if(isset($_SESSION['user'])){
+        header('Location: /');
+    }
+?>
 <!DOCTYPE html>
 <html lang="pl-PL">
 <head>
@@ -6,8 +12,7 @@
     <link href="../css/bulma.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/fontawesome/all.css">
     <script defer src="../js/login.js" type="module"></script>
-    <script defer src="../js/redirect.js" type="module"></script>
-    <script defer src="../js/showNotification.js" type="module"></script>
+    <script defer src="../js/notification.js" type="module"></script>
     <script defer src="../js/fontawesome/brands.js"></script>
     <script defer src="../js/fontawesome/solid.js"></script>
     <script defer src="../js/fontawesome/fontawesome.js"></script>
@@ -35,7 +40,7 @@
                 </p>
             </div>
             <p class="help">
-                Jeśli nie masz konta, <a href="register.html">zarejestruj się!</a>
+                Jeśli nie masz konta, <a href="register.php">zarejestruj się!</a>
             </p>
             <div class="field">
                 <p class="control">

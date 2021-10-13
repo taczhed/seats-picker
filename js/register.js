@@ -1,4 +1,4 @@
-import { showNotification } from './showNotification.js'
+import { notification } from './notification.js'
 
 const registerBtn = document.querySelector('#register')
 
@@ -9,23 +9,21 @@ registerBtn.addEventListener('click',async () => {
     const secPassword = document.querySelector('#sec-password').value
 
     if (tel && login && password && secPassword && password === secPassword) {
-        const data = new FormData()
+        let data = new FormData()
         data.append('tel', tel)
         data.append('login', login)
         data.append('password', password)
 
-        const URL = '../php/register.php';
-        let res = await fetch(URL, {
+        const res = await fetch('../php/registerRequest.php', {
             method: "POST",
             body: data
-        })
-            .then(res => res.json())
-            .then(data => {
-                const type = data.result === 'Rejestracja przebiegła pomyślnie!' ? 'success' : 'error'
-                showNotification(type, data.result)
-            })
+        });
+
+        data = await res.json();
+        const type = data.result === 'Rejestracja przebiegła pomyślnie!' ? 'success' : 'error'
+        notification(type, data.result)
 
     }
-    else if (password !== secPassword) showNotification('danger', 'Hasło główne nie zgadza się z drugim hasłem!')
-    else showNotification('danger', 'Jedno z pól formularza pozostało puste!')
+    else if (password !== secPassword) notification('danger', 'Hasło główne nie zgadza się z drugim hasłem!')
+    else notification('danger', 'Jedno z pól formularza pozostało puste!')
 })

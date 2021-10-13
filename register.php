@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Seats picker - rejestracja</title>
-    <link href="../css/bulma.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/fontawesome/all.css">
-    <script defer src="../js/fontawesome/brands.js"></script>
-    <script defer src="../js/fontawesome/solid.js"></script>
-    <script defer src="../js/fontawesome/fontawesome.js"></script>
-    <script defer src="../js/register.js" type="module"></script>
-    <script defer src="../js/showNotification.js" type="module"></script>
+    <link href="css/bulma.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/fontawesome/all.css">
+    <script defer src="js/fontawesome/brands.js"></script>
+    <script defer src="js/fontawesome/solid.js"></script>
+    <script defer src="js/fontawesome/fontawesome.js"></script>
+    <script defer src="js/register.js" type="module"></script>
+    <script defer src="js/notification.js" type="module"></script>
 
 </head>
 <body>
@@ -59,6 +59,9 @@
                     </span>
                 </p>
             </div>
+            <p class="help">
+                Jeśli posiadasz już konto, <a href="login.php">zaloguj się</a>!
+            </p>
             <div class="field">
                 <p class="control">
                     <button id="register" class="button has-background-primary-dark has-text-white mt-2">Zarejestruj</button>

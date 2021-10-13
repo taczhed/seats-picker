@@ -1,4 +1,4 @@
-import { showNotification } from './showNotification.js'
+import { notification } from './notification.js'
 
 const loginBtn = document.querySelector('#login-button')
 
@@ -7,24 +7,22 @@ loginBtn.addEventListener('click',async () => {
     const password = document.querySelector('#password').value
 
     if (login && password) {
-        const data = new FormData()
+        let data = new FormData()
         data.append('login', login)
         data.append('password', password)
 
-        const URL = '../php/login.php';
-        let res = await fetch(URL, {
+        const res = await fetch('../php/loginRequest.php', {
             method: "POST",
             body: data
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.result === 'success') {
-                    location.href = "/html/films.html"
-                } else {
-                    const message = 'Zły login lub hasło!'
-                    showNotification(data.result, message)
-                }
-            })
+        });
+        data = await res.json();
 
-    } else showNotification('error', 'Jedno z pól formularza pozostało puste!')
+        if (data.result === 'success') {
+            location.href = "../index.php"
+        } else {
+            const message = 'Zły login lub hasło!'
+            notification(data.result, message)
+        }
+
+    } else notification('error', 'Jedno z pól formularza pozostało puste!')
 })
