@@ -2,9 +2,16 @@ div.seat {
     width: 20px;
     height: 23px;
     margin: 0 1px;
-    background-color: #00b89c;
     border-radius: 3px;
     float: left;
+}
+
+div.free {
+    background-color: #00b89c;
+}
+
+div.selected {
+    background-color: darkorange;
 }
 
 div.seat:nth-of-type(10) {
@@ -31,3 +38,17 @@ div#app {
     z-index: 2;
     margin-top: -10px;
 }
+
+div#login-info {
+    display: block;
+    position: absolute;
+    padding: 5px 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: right;
+}
+div#login-info span {
+    color: #00b89c;
+}
+
