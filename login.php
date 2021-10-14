@@ -21,8 +21,14 @@
 
     <main class="columns is-vcentered">
         <div class="column is-half is-offset-3 block mt-4 p-6">
+            <section class="hero has-background-primary-dark is-small">
+                <div class="hero-body">
+                    <p class="title has-text-white">
+                        Logowanie
+                    </p>
+                </div>
+            </section>
            <div class="box">
-            <p class="mb-4 is-size-5">Logowanie: </p>
             <div class="field">
                 <p class="control has-icons-left has-icons-right">
                     <input id="login" class="input" type="text" placeholder="Login">

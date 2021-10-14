@@ -21,22 +21,26 @@
 </head>
 <body>
 
-<div id="login-info"> Hi <span>
-   <?php
-       if(isset($_SESSION['user'])) echo $_SESSION['user'];
-   ?></span>#<?php if(isset($_SESSION['id'])) echo $_SESSION['id'];?>!
+<div id="login-info">
+Hi <span><?php if(isset($_SESSION['user'])) echo $_SESSION['user'];?></span>!
 </div>
 
 <main class="columns is-vcentered">
-    <div class="column is-half is-offset-3 block mt-4 p-6">
-        <div class="columns">
-            <div class="column is-2 is-offset-10">
-                 <button class="button has-background-primary-dark has-text-white" id="logout" >Wyloguj</button>
-            </div>
+    <div class="column is-8 is-offset-2 block mt-4 p-6">
+        <div class="container has-text-right py-2">
+            <button class="button has-background-primary-dark has-text-white" id="logout" >Wyloguj</button>
         </div>
+
+        <section class="hero has-background-primary-dark is-small">
+          <div class="hero-body">
+            <p class="title has-text-white">
+              Repertuar
+            </p>
+          </div>
+        </section>
+
         <div class="box">
-        <p class="is-size-4 mb-4" >Repertuar</p>
-        <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth"></table>
+        <table class="table is-bordered is-striped is-fullwidth"></table>
         </div>
     </div>
 </main>

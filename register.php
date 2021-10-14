@@ -16,8 +16,14 @@
 
 <main class="columns is-vcentered">
     <div class="column is-half is-offset-3 block mt-4 p-6">
+        <section class="hero has-background-primary-dark is-small">
+            <div class="hero-body">
+                <p class="title has-text-white">
+                    Rejestracja
+                </p>
+            </div>
+        </section>
         <div class="box">
-            <p class="mb-4 is-size-5">Rejestracja: </p>
             <div class="field">
                 <div class="field-label"></div>
                 <div class="field-body">

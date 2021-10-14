@@ -20,7 +20,9 @@ const fetchContent = async () => {
         id.innerText = movie.id
         title.innerText = movie.movie
         btn.innerText = 'Edytuj rezerwacje'
-        btn.classList.add('button', 'is-small')
+        btn.classList.add('button', 'has-background-primary-dark', 'has-text-white')
+        id.classList.add('is-vcentered', 'is-size-5')
+        title.classList.add('is-vcentered', 'is-size-5')
         btn.addEventListener('click', () => reserve(movie.id))
         option.appendChild(btn)
 

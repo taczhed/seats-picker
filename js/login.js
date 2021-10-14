@@ -18,7 +18,7 @@ loginBtn.addEventListener('click',async () => {
         data = await res.json();
 
         if (data.result === 'success') {
-            location.href = "../index.php"
+            location.href = "/"
         } else {
             const message = 'Zły login lub hasło!'
             notification(data.result, message)
