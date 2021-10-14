@@ -42,6 +42,9 @@
             <img id="bgc" alt="bg" src="img/bg.jpg">
         </figure>
         <div id="app" class="box"></div>
+        <div class="container has-text-centered">
+            <button class="button has-background-primary-dark has-text-white" id="reserve" >Potwierdź rezerwację miejsc!</button>
+        </div>
     </div>
 </main>
 

@@ -1,10 +1,14 @@
-let room = []
+import { notification } from './notification.js'
+
+let room
+let previousRoom
 let userId
+let movieId
 
 const render = {
 
     loadRoom: async () => {
-        const movieId = location.search.split('id=')[1]
+        movieId = location.search.split('id=')[1]
         const movieData = new FormData()
         movieData.append('id', movieId)
         const response = await fetch('../php/loadRoomRequest.php', {
@@ -13,6 +17,7 @@ const render = {
         })
         const data = await response.json()
         room = JSON.parse(data.seats).seats
+        previousRoom = [...room]
         userId = JSON.parse(data.userId)
         render.display()
         render.seats(room)
@@ -37,17 +42,22 @@ const render = {
 
                 if (typeOfSeat === 0) {
                     seat.classList.add("free")
-                    seat.addEventListener('click', () => render.toggleSeat(row, i))
+                    seat.addEventListener('click', () => render.toggleSeat(row, i, true))
                 } else if (typeOfSeat === userId) {
                     seat.classList.add("selected")
+                    seat.addEventListener('click', () => render.toggleSeat(row, i, false))
+                } else {
+                    seat.classList.add("occupied")
                 }
             })
             render.renderer(section)
         })
     },
 
-    toggleSeat: (row, i) => {
-        room[row][i] = userId
+    toggleSeat: (row, i, action) => {
+        // true = select, false = unselect
+        if (action) room[row][i] = userId
+        else room[row][i] = 0
         render.prerenderer()
         render.display()
         render.seats(room)
@@ -63,5 +73,25 @@ const render = {
         app.innerHTML = ''
     },
 }
-
 render.loadRoom()
+
+const reserveBtn = document.querySelector('#reserve')
+reserveBtn.addEventListener('click', async () => {
+    const roomData = new FormData()
+    roomData.append('id', movieId)
+    roomData.append('seats', JSON.stringify({seats: room}))
+
+    const response = await fetch('../php/updateRoomRequest.php', {
+        method: "POST",
+        body: roomData
+    })
+    await response
+    render.prerenderer()
+    render.display()
+    render.seats(room)
+
+    notification('success', "Rezerwacja zaznaczonych miejsc potwierdzona!")
+
+
+
+})

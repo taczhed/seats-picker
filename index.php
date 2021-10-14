@@ -35,7 +35,7 @@
             </div>
         </div>
         <div class="box">
-        <p class="is-size-4 mb-4" >Filmy </p>
+        <p class="is-size-4 mb-4" >Repertuar</p>
         <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth"></table>
         </div>
     </div>

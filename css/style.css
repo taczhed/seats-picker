@@ -4,6 +4,7 @@ div.seat {
     margin: 0 1px;
     border-radius: 3px;
     float: left;
+    cursor: pointer;
 }
 
 div.free {
@@ -12,6 +13,11 @@ div.free {
 
 div.selected {
     background-color: darkorange;
+}
+
+div.occupied {
+    background-color: red;
+    cursor: not-allowed;
 }
 
 div.seat:nth-of-type(10) {
