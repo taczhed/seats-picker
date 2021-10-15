@@ -1,19 +1,24 @@
 <?php
     require_once 'db.php';
 
-    $sql = "SELECT * FROM users WHERE login='$_POST[login]' and password='$_POST[password]' ";
+    $sql = "SELECT password FROM users WHERE login='$_POST[login]' ";
     $result = mysqli_query($conn, $sql);
-
+    $row = $result->fetch_row();
 
     if (mysqli_num_rows($result) > 0) {
-        session_start();
 
-        $row = $result->fetch_row();
-        $_SESSION['user'] = $_POST['login'];
-        $_SESSION['id'] = $row[0];
+       if (password_verify($_POST['password'], $row[0])) {
+          session_start();
 
-        $arr = array('result' => 'success');
-        echo json_encode($arr);
+          $_SESSION['user'] = $_POST['login'];
+          $_SESSION['id'] = $row[0];
+
+          $arr = array('result' => 'success');
+          echo json_encode($arr);
+       } else {
+          $arr = array('result' => 'error');
+          echo json_encode($arr);
+       }
     } else {
         $arr = array('result' => 'error');
         echo json_encode($arr);

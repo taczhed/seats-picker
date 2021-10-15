@@ -8,7 +8,8 @@
         $arr = array('result' => 'Błąd! Istnieje osoba o podanym loginie lub numerze telefonu!');
         echo json_encode($arr);
     } else {
-        $sql = "INSERT INTO users (id, tel, login, password) VALUES (NULL, '$_POST[tel]', '$_POST[login]', '$_POST[password]')";
+        $encryped_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        $sql = "INSERT INTO users (id, tel, login, password) VALUES (NULL, '$_POST[tel]', '$_POST[login]', '$encryped_password')";
         $result = mysqli_query($conn, $sql);
         $arr = array('result' => 'Rejestracja przebiegła pomyślnie!');
         echo json_encode($arr);
