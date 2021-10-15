@@ -2,7 +2,7 @@
 
 Simple application for booking seats in the cinema.
 
-##Assumptions
+Assumptions
 - No JavaScript framework (React, Vue etc.)
 - Using PHP and MySQL
 
