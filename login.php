@@ -10,6 +10,7 @@
     <meta charset="UTF-8">
     <title>Seats picker - logowanie</title>
     <link href="../css/bulma.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/fontawesome/all.css">
     <script defer src="../js/login.js" type="module"></script>
     <script defer src="../js/notification.js" type="module"></script>

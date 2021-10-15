@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Seats picker - rejestracja</title>
     <link href="css/bulma.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="css/fontawesome/all.css">
     <script defer src="js/fontawesome/brands.js"></script>
     <script defer src="js/fontawesome/solid.js"></script>

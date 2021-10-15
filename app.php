@@ -11,6 +11,7 @@
     <meta charset="UTF-8">
     <title>Seats picker - logowanie</title>
     <link href="css/bulma.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="css/fontawesome/all.css">
     <link rel="stylesheet" href="css/style.css">
     <script defer src="js/fontawesome/brands.js"></script>
@@ -26,8 +27,8 @@ Hi <span><?php if(isset($_SESSION['user'])) echo $_SESSION['user'];?></span>!
 </div>
 
 <main class="columns">
-    <div class="column is-half-desktop is-8-tablet is-offset-3-desktop is-offset-2-tablet block mt-4 p-6">
-            <section class="hero has-background-primary-dark is-small">
+    <div class="column is-4-desktop is-8-tablet is-offset-4-desktop is-offset-2-tablet block mt-4 p-2">
+         <section class="hero has-background-primary-dark is-small">
                 <div class="hero-body">
                     <p class="title has-text-white has-text-centered">
                         <?php
@@ -39,12 +40,24 @@ Hi <span><?php if(isset($_SESSION['user'])) echo $_SESSION['user'];?></span>!
                         ?>
                     </p>
                 </div>
-            </section>
+        </section>
         <figure class="image">
             <img id="bgc" alt="bg" src="img/bg.jpg">
         </figure>
         <div id="app" class="box"></div>
-        <div class="container has-text-centered">
+        <div class="columns is-vcentered">
+             <div class="column is-1 is-offset-4 seat free"></div>
+             <div class="column is-4 p-1">wolne miejsce</div>
+        </div>
+        <div class="columns is-vcentered">
+             <div class="column is-1 is-offset-4 seat selected"></div>
+             <div class="column is-4 p-1">wybrane miejsce</div>
+        </div>
+        <div class="columns is-vcentered">
+             <div class="column is-1 is-offset-4 seat occupied ml-8"></div>
+             <div class="column is-4 p-1">zajęte miejsce</div>
+        </div>
+        <div class="block has-text-centered">
             <button class="button has-background-primary-dark has-text-white" id="reserve" >Potwierdź miejsca</button>
         </div>
     </div>
