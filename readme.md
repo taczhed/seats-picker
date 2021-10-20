@@ -1,4 +1,4 @@
-![seats-picker](https://github.com/taczhed/seats-picker/img/logo.png?raw=true)
+![seats-picker](./img/logo.png)
 
 Simple application for booking seats in the cinema with login and register auth.
 
@@ -24,7 +24,6 @@ path/xampp/apache/conf/httpd.conf
 +       DocumentRoot "path_to_your_project/seats-picker"
 +       <Directory "path_to_your_project/seats-picker">
 ```
-Restart and run `Apache` and `MySQL` servers
 
 After open [http://localhost/](http://localhost:80) to view project in the browser.
 
