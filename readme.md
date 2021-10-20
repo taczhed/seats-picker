@@ -1,9 +1,9 @@
-# Seats-picker
+![seats-picker](img/logo.png)
 
-Simple application for booking seats in the cinema.
+Simple application for booking seats in the cinema with login and register auth.
 
 
-### Install
+## Installation
 
 1. Clone:
 
@@ -11,13 +11,7 @@ Simple application for booking seats in the cinema.
 git clone https://github.com/taczhed/seats-picker.git
 ```
 
-2. Go to project directory:
-
-```sh
-cd seats-picker
-```
-
-3. Change default path in xampp `httpd.conf` and run apache server into `seats-picker` directory:
+2. Change default path in xampp `httpd.conf` and run apache server into `seats-picker` directory:
 
 ```sh
 path/xampp/apache/conf/httpd.conf
@@ -30,10 +24,9 @@ path/xampp/apache/conf/httpd.conf
 +       DocumentRoot "path_to_your_project/seats-picker"
 +       <Directory "path_to_your_project/seats-picker">
 ```
+Restart and run `Apache` and `MySQL` servers
 
-Open [http://localhost/](http://localhost:80) to view project in the browser.
-
-
+After open [http://localhost/](http://localhost:80) to view project in the browser.
 
 ## Assumptions
 - Working without any JavaScript framework (React, Vue, Angular etc.)
@@ -44,5 +37,6 @@ Open [http://localhost/](http://localhost:80) to view project in the browser.
 - [php](https://www.php.net/)
 - [MySQL](https://www.mysql.com/)
 - [Bulma](https://bulma.io/)
+- [Font Awesome](https://fontawesome.com/)
 
 author `taczhed`

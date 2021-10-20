@@ -17,6 +17,7 @@ const render = {
         })
         const data = await response.json()
         room = JSON.parse(data.seats).seats
+
         previousRoom = [...room]
         userId = JSON.parse(data.userId)
         render.display()
