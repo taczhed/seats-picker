@@ -1,4 +1,4 @@
-![seats-picker](img/logo.png)
+![seats-picker](https://github.com/taczhed/seats-picker/img/logo.png?raw=true)
 
 Simple application for booking seats in the cinema with login and register auth.
 
